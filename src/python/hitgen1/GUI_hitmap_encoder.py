@@ -329,41 +329,41 @@ def OnCanvasClick(event):
 # Order is columns from left to right. Within columns, rows from top to bottom
 # If a qcell has any hits then output its Row, Column and 16-bit hitmap and ToT list.
 #-------------------------------------------------------------------
-def onButtonGenerate(event):                  
-    print ('Generate')
-    nLeftCol= int(strCol.get())
-    nTopRow = int(strRow.get())
+# def onButtonGenerate(event):                  
+    # print ('Generate')
+    # nLeftCol= int(strCol.get())
+    # nTopRow = int(strRow.get())
     
-    nMapY   = int(nRow/2)
-    nMapX   = int(nCol/8)
-    nHitY   = nRow - 2*nMapY
-    nHitX   = nCol - 8*nMapX
-    print   ('Col , Row ', nCol, nRow)
-    print   ('nLeftCol , nTopRow ', nLeftCol, nTopRow)
-    print   ('Qcell X,Y ', nMapX + nLeftCol, nMapY + nTopRow)
-    print   ('Bit       ', nHitX + 8*nHitY)
+    # nMapY   = int(nRow/2)
+    # nMapX   = int(nCol/8)
+    # nHitY   = nRow - 2*nMapY
+    # nHitX   = nCol - 8*nMapX
+    # print   ('Col , Row ', nCol, nRow)
+    # print   ('nLeftCol , nTopRow ', nLeftCol, nTopRow)
+    # print   ('Qcell X,Y ', nMapX + nLeftCol, nMapY + nTopRow)
+    # print   ('Bit       ', nHitX + 8*nHitY)
     
     # Update the Canvas hitmap colors and store the ToT of each hitmap cell
-    if arrHitTot[nCol][nRow] == 0:
-        arrHitTot[nCol][nRow] = int(strToT.get())
-        canvas1.itemconfig(arrHitCellId1[nCol][nRow], fill="cyan") # change color
-    else:
-        arrHitTot[nCol][nRow] = 0
-        canvas1.itemconfig(arrHitCellId1[nCol][nRow], fill="grey") # change color to grey
+    # if arrHitTot[nCol][nRow] == 0:
+        # arrHitTot[nCol][nRow] = int(strToT.get())
+        # canvas1.itemconfig(arrHitCellId1[nCol][nRow], fill="cyan") # change color
+    # else:
+        # arrHitTot[nCol][nRow] = 0
+        # canvas1.itemconfig(arrHitCellId1[nCol][nRow], fill="grey") # change color to grey
     
     
 #-------------------------------------------------------------------
 # Function to open a file to store hit data.
 # Write any necessary header information
 #-------------------------------------------------------------------
-def onFileName1Init():
-    print   ('onFileName1Init')
+#def onFileName1Init():
+#    print   ('onFileName1Init')
     
 #-------------------------------------------------------------------
 # Function to write hitdata into the file.
 #-------------------------------------------------------------------
-def onFileName1AddTo():
-    print   ('onFileName1AddTo')
+#def onFileName1AddTo():
+#    print   ('onFileName1AddTo')
     
 
 #-------------------------------------------------------------------
@@ -514,7 +514,7 @@ strRow.set(0)
 strCol.set(0)
 strToT.set(5)
 
-frameRowCol   = Frame(root, borderwidth=3,relief=GROOVE, padx = 5, pady = 5)
+#frameRowCol   = Frame(root, borderwidth=3,relief=GROOVE, padx = 5, pady = 5)
 
 
 #-----------------------------------------------------------------------------------------------------------------------------
@@ -797,7 +797,7 @@ arrTextHitBits2[3][1] = canvas1.create_text(600+ 5*step, 720, anchor=SW, font=fo
 arrTextHitBits2[3][2] = canvas1.create_text(600+ 6*step, 720, anchor=SW, font=fontHitResult, text=canvas1.itemcget(arrNodeText[3][2],'text'), fill="lightgrey") # "J"
 arrTextHitBits2[3][3] = canvas1.create_text(600+ 7*step, 720, anchor=SW, font=fontHitResult, text=canvas1.itemcget(arrNodeText[3][3],'text'), fill="lightgrey") # "K"
 arrTextHitBits2[1][1] = canvas1.create_text(600+ 8*step, 720, anchor=SW, font=fontHitResult, text=canvas1.itemcget(arrNodeText[1][1],'text'), fill="lightgrey") # "C"
-arrTextHitBits2[2][2] = canvas1.create_text(600+ 9*step, 720, anchor=SW, font=fontHitResult, text=canvas1.itemcget(arrNodeText[1][1],'text'), fill="lightgrey") # "F"
+arrTextHitBits2[2][2] = canvas1.create_text(600+ 9*step, 720, anchor=SW, font=fontHitResult, text=canvas1.itemcget(arrNodeText[2][2],'text'), fill="lightgrey") # "F"
 arrTextHitBits2[2][3] = canvas1.create_text(600+10*step, 720, anchor=SW, font=fontHitResult, text=canvas1.itemcget(arrNodeText[2][3],'text'), fill="lightgrey") # "G"
 arrTextHitBits2[3][4] = canvas1.create_text(600+11*step, 720, anchor=SW, font=fontHitResult, text=canvas1.itemcget(arrNodeText[3][4],'text'), fill="lightgrey") # "L"
 arrTextHitBits2[3][5] = canvas1.create_text(600+12*step, 720, anchor=SW, font=fontHitResult, text=canvas1.itemcget(arrNodeText[3][5],'text'), fill="lightgrey") # "M"
